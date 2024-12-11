@@ -4,18 +4,9 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String[] args) {
-        // insert test code here
-        int[] numbers = {3, 1, 5, 99, 3, 12};
-
-        System.out.println("Index of the smallest number: " + indexOfSmallest(numbers));
-
-        System.out.println(Arrays.toString(numbers));
-
-        Main.swap(numbers, 1, 0);
-        System.out.println(Arrays.toString(numbers));
-
-        Main.swap(numbers, 0, 3);
-        System.out.println(Arrays.toString(numbers));
+        // Test array
+        int[] numbers = {8, 3, 7, 9, 1, 2, 4};
+        Main.sort(numbers);
     }
 
     public static int smallest(int[] array) {
@@ -56,5 +47,21 @@ public class Main {
         array[index1] = array[index2]; // Assign the value at index2 to index1
 
         array[index2] = temp;  // Assign the value in temp (original index1 value) to index2
+    }
+
+    public static void sort(int[] array) {
+        // Print the initial state of the array
+        System.out.println(Arrays.toString(array));
+
+        for (int i = 0; i < array.length; i++) {
+            // Find the index of the smallest number from index `i` onwards
+            int smallestIndex = indexOfSmallestFrom(array, i);
+
+            // Swap the number at index `i` with the smallest number found
+            swap(array, i, smallestIndex);
+
+            // Print the array after every iteration to observe the sorting progress
+            System.out.println(Arrays.toString(array));
+        }
     }
 }
