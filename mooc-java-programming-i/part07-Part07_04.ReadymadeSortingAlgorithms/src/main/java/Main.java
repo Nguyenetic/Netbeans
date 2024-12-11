@@ -30,6 +30,19 @@ public class Main {
         return index;
     }
     
+
+  
+    public static int indexOfSmallestFrom(int[] table, int startIndex) {
+        int index = startIndex; // Start searching from the provided index
+        for (int i = startIndex + 1; i < table.length; i++) {
+            if (table[i] < table[index]) {
+                index = i; // Update the index if a smaller value is found
+            }
+        }
+        return index;
+    }
+}
+    
     
 
-}
+
