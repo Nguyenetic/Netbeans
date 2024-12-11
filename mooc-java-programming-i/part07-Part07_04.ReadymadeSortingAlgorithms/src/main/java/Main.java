@@ -9,6 +9,16 @@ public class Main {
      System.out.println("Index of the smallest number: " + indexOfSmallest(array));
     }
     
+    public static int smallest(int[] array) {
+        int smallest = array[0]; // Assume the first element is the smallest
+        for (int number : array) {
+            if (number < smallest) {
+                smallest = number; // Update smallest if a smaller value is found
+            }
+        }
+        return smallest;
+    }
+    
     public static int indexOfSmallest(int[] array) {
         int index = 0; // Start with the first element as the smallest
         for (int i = 1; i < array.length; i++){
@@ -19,5 +29,7 @@ public class Main {
     }
         return index;
     }
+    
+    
 
 }
